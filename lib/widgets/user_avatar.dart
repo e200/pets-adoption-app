@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_advanced_networkimage/provider.dart';
+import 'package:pets_adoption_app/widgets/network_image.dart';
 
 class UserAvatar extends StatelessWidget {
   final String url;
@@ -17,16 +17,7 @@ class UserAvatar extends StatelessWidget {
       width: width,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(50),
-        child: Image(
-          image: AdvancedNetworkImage(
-            url,
-            useDiskCache: true,
-            cacheRule: CacheRule(
-              maxAge: const Duration(days: 7),
-            ),
-          ),
-          fit: BoxFit.cover,
-        ),
+        child: AppNetworkImage(url),
       ),
     );
   }
